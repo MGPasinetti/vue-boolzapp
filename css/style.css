@@ -12,6 +12,7 @@ NOTA: non usate Bootstrap ma flexbox e float (eventualmente fatelo come bonus al
     --color-lightgreen: #D5F9BA;
     --color-grey: #EAEAEA;
     --color-hover-grey: #E9EBEB;
+    --color-font-grey: #B1B1B1; 
 }
 
 * {
@@ -22,7 +23,7 @@ NOTA: non usate Bootstrap ma flexbox e float (eventualmente fatelo come bonus al
 
 html {
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.5;
     font-size: 16px;
     color: black;
@@ -76,6 +77,40 @@ main {
     height: 100%;
     flex-basis: 30%;
 }
+
+.my-account {
+    padding: .5rem;
+    height: 3rem;
+    background-color: var(--color-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-img-name {
+    flex: 1 0 80%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.my-img-name img{
+    width: 2rem;
+    border-radius: 20rem;
+    margin-right: .2rem;
+}
+
+.account-activities {
+    flex: 0 1 20%;
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--color-font-grey);
+}
+
+.account-activities i {
+    cursor: pointer;
+} 
 
 /* CHAT-OPENED-SECTION */
 .chat-opened {
