@@ -13,6 +13,7 @@ NOTA: non usate Bootstrap ma flexbox e float (eventualmente fatelo come bonus al
     --color-grey: #EAEAEA;
     --color-hover-grey: #E9EBEB;
     --color-font-grey: #B1B1B1; 
+    --color-bkg-bell: #F2FBFF;
 }
 
 * {
@@ -78,6 +79,7 @@ main {
     flex-basis: 30%;
 }
 
+/* my-account */
 .my-account {
     padding: .5rem;
     height: 3rem;
@@ -97,6 +99,7 @@ main {
 
 .my-img-name img{
     width: 2rem;
+    height: 2rem;
     border-radius: 20rem;
     margin-right: .2rem;
 }
@@ -111,6 +114,42 @@ main {
 .account-activities i {
     cursor: pointer;
 } 
+
+/* notifications-on */
+.notifications-on {
+    padding: .5rem 1rem;
+    height: 3.5rem;
+    background-color: var(--color-lightblue);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.notifications-on .bell-rounded {
+    margin-right: .5rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 20rem;
+    background-color: var(--color-bkg-bell);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-lightblue);
+}
+
+.notifications-on div:last-child {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.notifications-on div:last-child a {
+    color: #666565;
+    font-size: 11px;
+    font-weight: 400;
+}
+
 
 /* CHAT-OPENED-SECTION */
 .chat-opened {
