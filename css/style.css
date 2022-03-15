@@ -5,6 +5,15 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 NOTA: non usate Bootstrap ma flexbox e float (eventualmente fatelo come bonus alla fine quello di usare Bootstrap)
 */
 
+:root {
+    --color-bkg-green: #009688;
+    --color-bkg-grey: #DADBD3;
+    --color-lightblue: #8EDAFC;
+    --color-lightgreen: #D5F9BA;
+    --color-grey: #EAEAEA;
+    --color-hover-grey: #E9EBEB;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +28,8 @@ html {
     color: black;
 }
 
-.container {
-    
+.bkg-black {
+    height: 1rem;
+
 }
 
