@@ -142,7 +142,6 @@ main {
 
 /* CHATS-MENU-SECTION */
 .chats-menu {
-    background-color: violet;
     height: 100%;
     flex-basis: 30%;
     border-right: 1px solid lightgrey;
@@ -215,7 +214,7 @@ main {
 }
 
 .account-friend {
-    padding: .5rem 1rem;
+    padding: .5rem 2rem .5rem 1rem;
     height: 3.5rem;
     background-color: white;
 }
@@ -244,10 +243,6 @@ main {
     justify-content: space-between;
 }
 
-.account-text div {
-    flex: 0 0 50%;
-}
-
 .account-text div:first-child {
     display: flex;
     flex-direction: column;
@@ -261,7 +256,6 @@ main {
 
 /* CHAT-OPENED-SECTION */
 .chat-opened {
-    background-color: aqua;
     height: 100%;
     flex-basis: 70%;
 }

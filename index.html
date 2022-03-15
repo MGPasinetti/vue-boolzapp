@@ -66,16 +66,16 @@
 
                 <div id="scroll-chats">
 
-                    <div class="account-friend">
+                    <div class="account-friend" v-for="(account, index) in arrAccounts">
                         <div class="img-name-account">
-                            <img src="img/avatar_1.jpg" alt="Immagine di Michele">
+                            <img :src="arrAccounts[index].img" :alt="arrAccounts[index].name">
                             
                             <div class="account-text">
                                 <div>
-                                    <span class="name">Michele</span>
-                                    <span class="font-smaller">Ultimo messaggio inviato</span>
+                                    <span class="name">{{arrAccounts[index].name}}</span>
+                                    <span class="font-smaller">{{arrAccounts[index].lastMsg}}</span>
                                 </div>
-                                <div class="font-smaller">12:00</div>
+                                <div class="font-smaller">{{arrAccounts[index].lastMsgTime}}</div>
                             </div>
                         </div>
                     </div>
