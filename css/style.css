@@ -28,8 +28,43 @@ html {
     color: black;
 }
 
-.bkg-black {
-    height: 1rem;
-
+.container {
+    height: 100vh;
+    position: relative;
 }
 
+/* BKG-SECTION */
+.bkg-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.bkg-black {
+    height: 1.5rem;
+    background-color: black;
+}
+
+.bkg-green {
+    height: 6rem;
+    background-color: var(--color-bkg-green);
+}
+
+.bkg-grey {
+    height: calc(100vh - 1.5rem - 6rem);
+    background-color: var(--color-bkg-grey);
+}
+
+/* MAIN */
+main {
+    min-width: 1000px;
+    height: 20vh;
+    background-color: white;
+    position: absolute;
+    top: 2.5rem;
+    left: 6rem;
+    right: 6rem;
+    z-index: 1;
+}
