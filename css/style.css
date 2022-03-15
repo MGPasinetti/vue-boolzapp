@@ -60,11 +60,26 @@ html {
 /* MAIN */
 main {
     min-width: 1000px;
-    height: 20vh;
     background-color: white;
     position: absolute;
     top: 2.5rem;
-    left: 6rem;
-    right: 6rem;
+    left: 8rem;
+    right: 8rem;
+    bottom: 1rem;
     z-index: 1;
+    display: flex;
+}
+
+/* CHATS-MENU-SECTION */
+.chats-menu {
+    background-color: violet;
+    height: 100%;
+    flex-basis: 30%;
+}
+
+/* CHAT-OPENED-SECTION */
+.chat-opened {
+    background-color: aqua;
+    height: 100%;
+    flex-basis: 70%;
 }
