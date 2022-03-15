@@ -56,13 +56,36 @@
                 </div>
 
                 <div class="newchat-search">
-                    <!-- <input type="text" name="searching-chat" placeholder="Cerca o inizia una nuova chat"> -->
+                    <div>
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <input type="text" name="searching-chat" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+
+                <div id="scroll-chats">
+
+                    <div class="account account-friend">
+                        <div class="img-name-account">
+                            <img src="img/avatar_1.jpg" alt="Immagine di Michele">
+                            
+                            <div class="account-text">
+                                <div>
+                                    <span class="name">Michele</span>
+                                    <span class="font-smaller">Ultimo messaggio inviato</span>
+                                </div>
+                                <div class="font-smaller">12:00</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </section>
 
             <section class="chat-opened">
-                <header class="friend-account account">
+                <header class="account">
                     <div class="img-name-account">
                         <img src="img/avatar_1.jpg" alt="Immagine di Michele">
                         
@@ -84,7 +107,7 @@
     </div>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="js/script.js"></script>
 </body>
 
