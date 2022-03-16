@@ -128,6 +128,7 @@ header .img-name-account div {
 
 /* MAIN */
 main {
+    margin: 0 auto;
     min-width: 1000px;
     background-color: white;
     position: absolute;
@@ -269,6 +270,7 @@ main {
 
 /* write-msg */
 .write-msg {
+    padding: .5rem 0;
     height: 3rem;
     background-color: var(--color-grey);
     position: absolute;
@@ -276,4 +278,21 @@ main {
     left: 0;
     right: 0;
     display: flex;
+    justify-content: space-evenly;
 }
+
+.write-msg input {
+    padding: .5rem;
+    flex: 1 0 80%;
+    border-radius: 3px;
+}
+
+.write-msg div {
+    flex: 0 1 10%;
+    align-self: center;
+    text-align: center;
+    font-size: 18px;
+    color: #353535;
+}
+
+
