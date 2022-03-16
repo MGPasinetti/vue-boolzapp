@@ -1,10 +1,3 @@
-/* 
-MILESTONE 1
-Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-NOTA: non usate Bootstrap ma flexbox e float (eventualmente fatelo come bonus alla fine quello di usare Bootstrap)
-*/
-
 :root {
     --color-bkg-green: #009688;
     --color-bkg-grey: #DADBD3;
@@ -32,6 +25,7 @@ html {
 }
 
 .container {
+    min-width: 1000px;
     height: 100vh;
     position: relative;
 }
@@ -102,14 +96,6 @@ header .img-name-account div {
 
 
 /* BKG-SECTION */
-.bkg-section {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    z-index: -1;
-}
-
 .bkg-black {
     height: 1.5rem;
     background-color: black;
@@ -132,11 +118,9 @@ main {
     min-width: 1000px;
     background-color: white;
     position: absolute;
-    top: 2.5rem;
-    left: 8rem;
-    right: 8rem;
-    bottom: 1rem;
-    z-index: 1;
+    top: 25.5%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
 }
 
