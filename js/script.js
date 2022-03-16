@@ -19,6 +19,7 @@ Pensate bene a come strutturare i dati prima di implementare il codice.
 const app = new Vue({
     el: `#app`,
     data: {
+        activeIndex: 0,
         arrContacts: [
             {
                 img: `img/avatar_1.jpg`,
@@ -68,6 +69,7 @@ const app = new Vue({
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
             },
+            
         ]
     }
 });

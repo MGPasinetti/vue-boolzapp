@@ -74,9 +74,9 @@ body {
     background: #EAEAEA;
 }
   
-.header-left .header-left-logo,
+.header-left .header-left-img,
 .header-left .header-left-icons,
-.header-right .header-right-logo,
+.header-right .header-right-img,
 .header-right .header-right-icons {
     display: flex;
     align-items: center;
@@ -85,21 +85,21 @@ body {
     height: 100%;
 }
   
-.header-left .header-left-logo h3 {
+.header-left .header-left-img h3 {
     margin-left: 5px;
     font-size: 90%;
 }
   
-.header-left .header-left-logo img,
-.header-right .header-right-logo img {
+.header-left .header-left-img img,
+.header-right .header-right-img img {
     width: 50px;
     height: 50px;
     margin: auto 0 auto 10px;
     border-radius: 100%;
 }
   
-.header-left .header-left-logo,
-.header-right .header-right-logo {
+.header-left .header-left-img,
+.header-right .header-right-img {
     float: left;
 }
   

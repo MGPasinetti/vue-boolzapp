@@ -26,7 +26,7 @@
 
             <!-- header-left -->
             <div class="header-left">
-                <div class="header-left-logo">
+                <div class="header-left-img">
                     <img src="img/avatar_1.jpg" alt="Nome Utente">
                     <h3>Nome Utente</h3>
                 </div>
@@ -60,7 +60,7 @@
             <!-- contacts-left -->
             <div class="contacts">
 
-                <div class="contact" v-for="(contact, index) in arrContacts">
+                <div class="contact" v-for="(contact, index) in arrContacts" @click="activeIndex = index"  :class="index == activeIndex ? `active` : ``">
                     <div class="contact-img">
                         <img :src="arrContacts[index].img" :alt="arrContacts[index].name">
                     </div>
@@ -83,9 +83,9 @@
 
             <!-- header-right -->
             <div class="header-right">
-                <div class="header-right-logo">
-                    <img src="img/avatar_2.jpg" alt="Michele">
-                    <h3><span id="header-right-contact-name">Michele</span> <br> <small class="time">Ultimo accesso oggi
+                <div class="header-right-img">
+                    <img :src="arrContacts[activeIndex].img" :alt="arrContacts[activeIndex].name">
+                    <h3><span id="header-right-contact-name">{{arrContacts[activeIndex].name}}</span> <br> <small class="time">Ultimo accesso oggi
                             alle</small></h3>
                 </div>
                 <div class="header-right-icons">
@@ -103,6 +103,7 @@
                     <div class='message sent'>
                         <span class="message-text">Ciao come stai?</span>
                         <span class="message-time">20/03/2020 16:30:00</span>
+
                         <i class="fa fa-chevron-down f-right message-options"></i>
                         <div class="message-options-panel" style="display: none;">
                             <div class="message-info">Info messaggio</div>
@@ -114,6 +115,7 @@
                     <div class='message received'>
                         <span class="message-text">Bene grazie! Stasera ci vediamo?</span>
                         <span class="message-time">20/03/2020 16:30:55</span>
+
                         <i class="fa fa-chevron-down f-right message-options"></i>
                         <div class="message-options-panel" style="display: none;">
                             <div class="message-info">Info messaggio</div>
