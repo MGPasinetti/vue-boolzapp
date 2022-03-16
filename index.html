@@ -10,9 +10,7 @@
     <!-- style -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
@@ -22,102 +20,123 @@
 
 <body>
 
-    <div class="container">
-        <div class="bkg-section">
-            <div class="bkg-black"></div>
-            <div class="bkg-green"></div>
-            <div class="bkg-grey"></div>
+    <div id="app" class="container">
+        <!-- CONTAINER LEFT -->
+        <div class="left">
+
+            <!-- header-left -->
+            <div class="header-left">
+                <div class="header-left-logo">
+                    <img src="img/avatar_1.jpg" alt="Nome Utente">
+                    <h3>Nome Utente</h3>
+                </div>
+                <div class="header-left-icons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+
+            <!-- disclaimer-left -->
+            <div class="left-disclaimer">
+                <div class="left-disclaimer-logo">
+                    <i class="fa fa-bell-slash" aria-hidden="true"></i>
+                </div>
+                <div class="left-disclaimer-text">
+                    <h3>Ricevi notifiche di nuovi messaggi</h3>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div>
+
+            <!-- searchbar-left -->
+            <div class="left-searchbar">
+                <label class="search-label" for="search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
+                    name="search">
+            </div>
+
+            <!-- contacts-left -->
+            <div class="contacts">
+
+                <div class="contact" v-for="(contact, index) in arrContacts">
+                    <div class="contact-img">
+                        <img :src="arrContacts[index].img" :alt="arrContacts[index].name">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">{{arrContacts[index].name}}</span>
+                            <span class="time f-right">
+                                {{arrContacts[index].lastMsgTime}}
+                            </span>
+                        </h3>
+                        <small>Tutto fatto! ...</small>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <main>
-            <section class="chats-menu">
+        <!-- CONTAINER RIGHT -->
+        <div class="right">
 
-                <header class="account">
-
-                    <div class="img-name-account">
-                        <img src="img/avatar_io.jpg" alt="L'immagine del tuo account">
-                        <span class="name">Sofia</span>
-                    </div>
-
-                    <div class="account-activities">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                </header>
-
-                <div class="notifications-on">
-                    <div class="bell-rounded"><i class="fas fa-bell-slash"></i></div>
-
-                    <div>
-                        <span>Ricevi notifiche di nuovi messaggi</span>
-                        <a href="#!" class="font-grey-small">Attiva notifiche desktop</a>
-                    </div>
+            <!-- header-right -->
+            <div class="header-right">
+                <div class="header-right-logo">
+                    <img src="img/avatar_2.jpg" alt="Michele">
+                    <h3><span id="header-right-contact-name">Michele</span> <br> <small class="time">Ultimo accesso oggi
+                            alle</small></h3>
                 </div>
-
-                <div class="newchat-search">
-                    <div>
-                        <button class="search-btn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <input type="text" name="searching-chat" placeholder="Cerca o inizia una nuova chat">
-                    </div>
+                <div class="header-right-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
+            </div>
 
-                <div id="scroll-chats">
+            <!-- right-messages-container -->
+            <div class="right-messages-container">
+                <div class="right-messages">
 
-                    <div class="account-friend" v-for="(account, index) in arrAccounts">
-                        <div class="img-name-account">
-                            <img :src="arrAccounts[index].img" :alt="arrAccounts[index].name">
-                            
-                            <div class="account-text">
-                                <div>
-                                    <span class="name">{{arrAccounts[index].name}}</span>
-                                    <span class="font-smaller">{{arrAccounts[index].lastMsg}}</span>
-                                </div>
-                                <div class="font-smaller">{{arrAccounts[index].lastMsgTime}}</div>
-                            </div>
+                    <!-- message-sent -->
+                    <div class='message sent'>
+                        <span class="message-text">Ciao come stai?</span>
+                        <span class="message-time">20/03/2020 16:30:00</span>
+                        <i class="fa fa-chevron-down f-right message-options"></i>
+                        <div class="message-options-panel" style="display: none;">
+                            <div class="message-info">Info messaggio</div>
+                            <div class="message-destroy">Cancella messaggio</div>
+                        </div>
+                    </div>
+
+                    <!-- message-received -->
+                    <div class='message received'>
+                        <span class="message-text">Bene grazie! Stasera ci vediamo?</span>
+                        <span class="message-time">20/03/2020 16:30:55</span>
+                        <i class="fa fa-chevron-down f-right message-options"></i>
+                        <div class="message-options-panel" style="display: none;">
+                            <div class="message-info">Info messaggio</div>
+                            <div class="message-destroy">Cancella messaggio</div>
                         </div>
                     </div>
 
                 </div>
+            </div>
 
-            </section>
-
-            <section class="chat-opened">
-                <header class="account">
-                    <div class="img-name-account">
-                        <img src="img/avatar_1.jpg" alt="Immagine di Michele">
-                        
-                        <div>
-                            <span class="name">Michele</span>
-                            <span class="font-grey-small">Ultimo accesso oggi alle 12:00</span>
-                        </div>
-                    </div>
-
-                    <div class="account-activities">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                </header>
-
-                <div class="main-chat"></div>
-
-                <div class="write-msg">
-                    <div class="emoji">
-                        <i class="far fa-smile"></i>
-                    </div>
-                    <input type="text" placeholder="Scrivi un messaggio">
-                    <div class="audio-msg">
-                        <i class="fas fa-microphone"></i>
-                    </div>
+            <!-- right-footer -->
+            <div class="right-footer">
+                <div class="right-footer-icon f-left">
+                    <i class="far fa-smile"></i>
                 </div>
-            </section>
-        </main>
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio">
+                <div class="right-footer-icon f-right">
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
 
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="js/script.js"></script>
