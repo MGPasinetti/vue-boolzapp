@@ -50,17 +50,19 @@
 
             <!-- searchbar-left -->
             <div class="left-searchbar">
-                <label class="search-label" for="search">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </label>
-                <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
-                    name="search">
+                <div class="searchbar-container">
+                    <button class="search-btn" for="search">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                    <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat" name="search">
+                </div>
             </div>
 
             <!-- contacts-left -->
             <div class="contacts">
 
-                <div class="contact" v-for="(contact, index) in arrContacts" @click="currentChatIndex = index"  :class="index == currentChatIndex ? `active` : ``">
+                <div class="contact" v-for="(contact, index) in arrContacts" @click="currentChatIndex = index"
+                    :class="index == currentChatIndex ? `active` : ``">
                     <div class="contact-img">
                         <img :src="arrContacts[index].img" :alt="arrContacts[index].name">
                     </div>
@@ -85,7 +87,8 @@
             <div class="header-right">
                 <div class="header-right-img">
                     <img :src="arrContacts[currentChatIndex].img" :alt="arrContacts[currentChatIndex].name">
-                    <h3><span id="header-right-contact-name">{{arrContacts[currentChatIndex].name}}</span> <br> <small class="time">Ultimo accesso oggi
+                    <h3><span id="header-right-contact-name">{{arrContacts[currentChatIndex].name}}</span> <br> <small
+                            class="time">Ultimo accesso oggi
                             alle</small></h3>
                 </div>
                 <div class="header-right-icons">
@@ -100,7 +103,8 @@
                 <div class="right-messages">
 
                     <!-- messages -->
-                    <div class="message" v-for="message in arrContacts[currentChatIndex].arrMsgs" :class="{sent : message.sent, received : !message.sent }" >
+                    <div class="message" v-for="message in arrContacts[currentChatIndex].arrMsgs"
+                        :class="{sent : message.sent, received : !message.sent }">
                         <span class="message-text">{{message.text}}</span>
                         <span class="message-time">20/03/2020 16:30:00</span>
 
@@ -119,7 +123,8 @@
                 <div class="right-footer-icon f-left">
                     <i class="far fa-smile"></i>
                 </div>
-                <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model="newSendingMsg.text" @keyup.enter="sendNewMsg()">
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model="newSendingMsg.text"
+                    @keyup.enter="sendNewMsg()">
                 <div class="right-footer-icon f-right">
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </div>
