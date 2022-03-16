@@ -26,19 +26,22 @@ const app = new Vue({
                 name: `Michele`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
-                previewMsg: ``,
+                previewMsg: ``, // TODO: crea random date
                 arrMsgsSent: [
                     {
+                        id: 0,
                         text: `Hai portato a spasso il cane?`,
-                        time: ``, // TODO: crea random date
+                        time: ``, 
                     },
                     {
+                        id: 1,
                         text: `Ricordati di dargli da mangiare`,
                         time: ``, 
                     },
                 ],
                 arrMsgsReceived: [
                     {
+                        id: 2,
                         text: `Ok`,
                         time: ``, 
                     },
@@ -52,16 +55,19 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgsSent: [
                     {
+                        id: 1,
                         text: `Ciao come stai?`,
                         time: ``, 
                     },
                 ],
                 arrMsgsReceived: [
                     {
+                        id: 0,
                         text: `Bene grazie! Stasera ci vediamo?`,
                         time: ``, 
                     },
                     {
+                        id: 2,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
                         time: ``, 
                     },
@@ -72,36 +78,156 @@ const app = new Vue({
                 name: `Samuele`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
+                previewMsg: ``,
+                arrMsgsSent: [
+                    {
+                        id: 0,
+                        text: `Hai portato a spasso il cane?`,
+                        time: ``, 
+                    },
+                    {
+                        id: 1,
+                        text: `Ricordati di dargli da mangiare`,
+                        time: ``, 
+                    },
+                ],
+                arrMsgsReceived: [
+                    {
+                        id: 2,
+                        text: `Ok`,
+                        time: ``, 
+                    },
+                ],
             },
             {
                 img: `img/avatar_4.jpg`,
                 name: `Alessandro B.`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
+                previewMsg: ``,
+                arrMsgsSent: [
+                    {
+                        id: 1,
+                        text: `Ciao come stai?`,
+                        time: ``, 
+                    },
+                ],
+                arrMsgsReceived: [
+                    {
+                        id: 0,
+                        text: `Bene grazie! Stasera ci vediamo?`,
+                        time: ``, 
+                    },
+                    {
+                        id: 2,
+                        text: `Mi piacerebbe ma devo andare a fare la spesa`,
+                        time: ``, 
+                    },
+                ],
             },
             {
                 img: `img/avatar_5.jpg`,
                 name: `Alessandro L.`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
+                previewMsg: ``,
+                arrMsgsSent: [
+                    {
+                        id: 0,
+                        text: `Hai portato a spasso il cane?`,
+                        time: ``, 
+                    },
+                    {
+                        id: 1,
+                        text: `Ricordati di dargli da mangiare`,
+                        time: ``, 
+                    },
+                ],
+                arrMsgsReceived: [
+                    {
+                        id: 2,
+                        text: `Ok`,
+                        time: ``, 
+                    },
+                ],
             },
             {
                 img: `img/avatar_6.jpg`,
                 name: `Claudia`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
+                previewMsg: ``,
+                arrMsgsSent: [
+                    {
+                        id: 1,
+                        text: `Ciao come stai?`,
+                        time: ``, 
+                    },
+                ],
+                arrMsgsReceived: [
+                    {
+                        id: 0,
+                        text: `Bene grazie! Stasera ci vediamo?`,
+                        time: ``, 
+                    },
+                    {
+                        id: 2,
+                        text: `Mi piacerebbe ma devo andare a fare la spesa`,
+                        time: ``, 
+                    },
+                ],
             },
             {
                 img: `img/avatar_7.jpg`,
                 name: `Federico`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
+                previewMsg: ``,
+                arrMsgsSent: [
+                    {
+                        id: 0,
+                        text: `Hai portato a spasso il cane?`,
+                        time: ``, 
+                    },
+                    {
+                        id: 1,
+                        text: `Ricordati di dargli da mangiare`,
+                        time: ``, 
+                    },
+                ],
+                arrMsgsReceived: [
+                    {
+                        id: 2,
+                        text: `Ok`,
+                        time: ``, 
+                    },
+                ],
             },
             {
                 img: `img/avatar_8.jpg`,
                 name: `Davide`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
+                previewMsg: ``,
+                arrMsgsSent: [
+                    {
+                        id: 1,
+                        text: `Ciao come stai?`,
+                        time: ``, 
+                    },
+                ],
+                arrMsgsReceived: [
+                    {
+                        id: 0,
+                        text: `Bene grazie! Stasera ci vediamo?`,
+                        time: ``, 
+                    },
+                    {
+                        id: 2,
+                        text: `Mi piacerebbe ma devo andare a fare la spesa`,
+                        time: ``, 
+                    },
+                ],
             },
             
         ]
