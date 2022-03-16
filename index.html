@@ -27,8 +27,8 @@
             <!-- header-left -->
             <div class="header-left">
                 <div class="header-left-img">
-                    <img src="img/avatar_1.jpg" alt="Nome Utente">
-                    <h3>Nome Utente</h3>
+                    <img src="img/avatar_io.jpg" alt="Nome Utente">
+                    <h3>Sofia</h3>
                 </div>
                 <div class="header-left-icons">
                     <i class="fas fa-circle-notch"></i>
@@ -60,7 +60,7 @@
             <!-- contacts-left -->
             <div class="contacts">
 
-                <div class="contact" v-for="(contact, index) in arrContacts" @click="activeIndex = index"  :class="index == activeIndex ? `active` : ``">
+                <div class="contact" v-for="(contact, index) in arrContacts" @click="currentChatIndex = index"  :class="index == currentChatIndex ? `active` : ``">
                     <div class="contact-img">
                         <img :src="arrContacts[index].img" :alt="arrContacts[index].name">
                     </div>
@@ -84,8 +84,8 @@
             <!-- header-right -->
             <div class="header-right">
                 <div class="header-right-img">
-                    <img :src="arrContacts[activeIndex].img" :alt="arrContacts[activeIndex].name">
-                    <h3><span id="header-right-contact-name">{{arrContacts[activeIndex].name}}</span> <br> <small class="time">Ultimo accesso oggi
+                    <img :src="arrContacts[currentChatIndex].img" :alt="arrContacts[currentChatIndex].name">
+                    <h3><span id="header-right-contact-name">{{arrContacts[currentChatIndex].name}}</span> <br> <small class="time">Ultimo accesso oggi
                             alle</small></h3>
                 </div>
                 <div class="header-right-icons">
@@ -100,7 +100,7 @@
                 <div class="right-messages">
 
                     <!-- messages -->
-                    <div class="message" v-for="(message, index) in arrContacts[activeIndex].arrMsgs" :class="message.id == `sent` ? `sent` : `received`" >
+                    <div class="message" v-for="message in arrContacts[currentChatIndex].arrMsgs" :class="{sent : message.sent, received : !message.sent }" >
                         <span class="message-text">{{message.text}}</span>
                         <span class="message-time">20/03/2020 16:30:00</span>
 
@@ -119,7 +119,7 @@
                 <div class="right-footer-icon f-left">
                     <i class="far fa-smile"></i>
                 </div>
-                <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model="newSendingMsg.text" @keyup.enter="sendNewMsg(activeIndex)">
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model="newSendingMsg.text" @keyup.enter="sendNewMsg">
                 <div class="right-footer-icon f-right">
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </div>

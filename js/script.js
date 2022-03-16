@@ -20,9 +20,9 @@ Pensate bene a come strutturare i dati prima di implementare il codice.
 const app = new Vue({
     el: `#app`,
     data: {
-        activeIndex: 0,
+        currentChatIndex: 0,
         newSendingMsg: {
-            id: `sent`,
+            sent: true,
             text: ``,
             time: ``,
         },
@@ -35,17 +35,17 @@ const app = new Vue({
                 previewMsg: ``, // TODO: create random date
                 arrMsgs: [
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Hai portato a spasso il cane?`,
                         time: ``, 
                     },
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Ricordati di dargli da mangiare`,
                         time: ``, 
                     },
                     {
-                        id: `received`,
+                        sent: false,
                         text: `ok`,
                         time: ``, 
                     },
@@ -59,17 +59,17 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Ciao come stai?`,
                         time: ``, 
                     },
                     {
-                        id: `receveid`,
+                        sent: false,
                         text: `Bene grazie! Stasera ci vediamo?`,
                         time: ``, 
                     },
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
                         time: ``, 
                     },
@@ -83,17 +83,17 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `received`,
+                        sent: false,
                         text: `la Marianna va in campagna`,
                         time: ``, 
                     },
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Sicuro di non aver sbagliato chat?`,
                         time: ``, 
                     },
                     {
-                        id: `received`,
+                        sent: false,
                         text: `Ah scusa`,
                         time: ``, 
                     },
@@ -107,12 +107,12 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Lo sai che ha aperto una nuova pizzeria?`,
                         time: ``, 
                     },
                     {
-                        id: `receveid`,
+                        sent: false,
                         text: `Sì ma preferirei andare al cinema`,
                         time: ``, 
                     },
@@ -126,17 +126,17 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Ciao come stai?`,
                         time: ``, 
                     },
                     {
-                        id: `receveid`,
+                        sent: false,
                         text: `Bene grazie! Stasera ci vediamo?`,
                         time: ``, 
                     },
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
                         time: ``, 
                     },
@@ -150,17 +150,17 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Hai portato a spasso il cane?`,
                         time: ``, 
                     },
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Ricordati di dargli da mangiare`,
                         time: ``, 
                     },
                     {
-                        id: `received`,
+                        sent: false,
                         text: `ok`,
                         time: ``, 
                     },
@@ -174,17 +174,17 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `received`,
+                        sent: false,
                         text: `la Marianna va in campagna`,
                         time: ``, 
                     },
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Sicuro di non aver sbagliato chat?`,
                         time: ``, 
                     },
                     {
-                        id: `received`,
+                        sent: false,
                         text: `Ah scusa`,
                         time: ``, 
                     },
@@ -198,25 +198,39 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `sent`,
+                        sent: true,
                         text: `Lo sai che ha aperto una nuova pizzeria?`,
                         time: ``, 
                     },
                     {
-                        id: `receveid`,
+                        sent: false,
                         text: `Sì ma preferirei andare al cinema`,
                         time: ``, 
                     },
                 ],
             },
             
-        ]
+        ],
     },
     methods: {
-        sendNewMsg(index) {
-            console.log(this.newSendingMsg.text)
-            this.arrContacts[index].arrMsgs.push({ ...this.newSendingMsg });
+        sendNewMsg() {
+            console.log(`funzia`)
+            const newSendingMsg = {...this.newSendingMsg};
+
+            this.sendMsg({...this.newSendingMsg});
             this.newSendingMsg.text = ``;
+
+            setTimeout(this.replyMsg, 1000)
+        },
+        sendMsg(message){
+            this.arrContacts[currentChatIndex].arrMsgs.push(message);
+        },
+        replyMsg() {
+            this.sendMsg({
+                sent: false,
+                text: `ok`,
+                time: ``,
+            })
         },
     },
 });
