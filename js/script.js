@@ -26,12 +26,46 @@ const app = new Vue({
                 name: `Michele`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
+                previewMsg: ``,
+                arrMsgsSent: [
+                    {
+                        text: `Hai portato a spasso il cane?`,
+                        time: ``, // TODO: crea random date
+                    },
+                    {
+                        text: `Ricordati di dargli da mangiare`,
+                        time: ``, 
+                    },
+                ],
+                arrMsgsReceived: [
+                    {
+                        text: `Ok`,
+                        time: ``, 
+                    },
+                ],
             },
             {
                 img: `img/avatar_2.jpg`,
                 name: `Fabio`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
+                previewMsg: ``,
+                arrMsgsSent: [
+                    {
+                        text: `Hai portato a spasso il cane?`,
+                        time: ``, 
+                    },
+                ],
+                arrMsgsReceived: [
+                    {
+                        text: `Bene grazie! Stasera ci vediamo?`,
+                        time: ``, 
+                    },
+                    {
+                        text: `Mi piacerebbe ma devo andare a fare la spesa`,
+                        time: ``, 
+                    },
+                ],
             },
             {
                 img: `img/avatar_3.jpg`,

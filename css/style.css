@@ -295,6 +295,10 @@ body {
     border-radius: 10px;
     font-size: 15px;
 }
+
+.right .right-messages .message-text {
+    margin-right: 1rem;
+}
   
 .right .right-messages .message::after {
     content: '';
