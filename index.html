@@ -99,7 +99,7 @@
             <div class="right-messages-container">
                 <div class="right-messages">
 
-                    <!-- message-sent -->
+                    <!-- messages -->
                     <div class="message" v-for="(message, index) in arrContacts[activeIndex].arrMsgs" :class="message.id == `sent` ? `sent` : `received`" >
                         <span class="message-text">{{message.text}}</span>
                         <span class="message-time">20/03/2020 16:30:00</span>
@@ -119,7 +119,7 @@
                 <div class="right-footer-icon f-left">
                     <i class="far fa-smile"></i>
                 </div>
-                <input class="new-message-inputs" placeholder="Scrivi un messaggio">
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model="newSendingMsg.text" @keyup.enter="sendNewMsg(activeIndex)">
                 <div class="right-footer-icon f-right">
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </div>

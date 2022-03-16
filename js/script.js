@@ -11,7 +11,8 @@ Click sul contatto mostra la conversazione del contatto cliccato
 MILESTONE 3
 Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
-Consiglio
+
+CONSIGLIO
 Pensate bene a come strutturare i dati prima di implementare il codice.
 */
 
@@ -20,6 +21,11 @@ const app = new Vue({
     el: `#app`,
     data: {
         activeIndex: 0,
+        newSendingMsg: {
+            id: `sent`,
+            text: ``,
+            time: ``,
+        },
         arrContacts: [
             {
                 img: `img/avatar_1.jpg`,
@@ -77,18 +83,18 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `sent`,
-                        text: `Hai portato a spasso il cane?`,
+                        id: `received`,
+                        text: `la Marianna va in campagna`,
                         time: ``, 
                     },
                     {
                         id: `sent`,
-                        text: `Ricordati di dargli da mangiare`,
+                        text: `Sicuro di non aver sbagliato chat?`,
                         time: ``, 
                     },
                     {
                         id: `received`,
-                        text: `ok`,
+                        text: `Ah scusa`,
                         time: ``, 
                     },
                 ],
@@ -102,17 +108,12 @@ const app = new Vue({
                 arrMsgs: [
                     {
                         id: `sent`,
-                        text: `Ciao come stai?`,
+                        text: `Lo sai che ha aperto una nuova pizzeria?`,
                         time: ``, 
                     },
                     {
                         id: `receveid`,
-                        text: `Bene grazie! Stasera ci vediamo?`,
-                        time: ``, 
-                    },
-                    {
-                        id: `sent`,
-                        text: `Mi piacerebbe ma devo andare a fare la spesa`,
+                        text: `Sì ma preferirei andare al cinema`,
                         time: ``, 
                     },
                 ],
@@ -173,18 +174,18 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgs: [
                     {
-                        id: `sent`,
-                        text: `Hai portato a spasso il cane?`,
+                        id: `received`,
+                        text: `la Marianna va in campagna`,
                         time: ``, 
                     },
                     {
                         id: `sent`,
-                        text: `Ricordati di dargli da mangiare`,
+                        text: `Sicuro di non aver sbagliato chat?`,
                         time: ``, 
                     },
                     {
                         id: `received`,
-                        text: `ok`,
+                        text: `Ah scusa`,
                         time: ``, 
                     },
                 ],
@@ -198,22 +199,24 @@ const app = new Vue({
                 arrMsgs: [
                     {
                         id: `sent`,
-                        text: `Ciao come stai?`,
+                        text: `Lo sai che ha aperto una nuova pizzeria?`,
                         time: ``, 
                     },
                     {
                         id: `receveid`,
-                        text: `Bene grazie! Stasera ci vediamo?`,
-                        time: ``, 
-                    },
-                    {
-                        id: `sent`,
-                        text: `Mi piacerebbe ma devo andare a fare la spesa`,
+                        text: `Sì ma preferirei andare al cinema`,
                         time: ``, 
                     },
                 ],
             },
             
         ]
-    }
+    },
+    methods: {
+        sendNewMsg(index) {
+            console.log(this.newSendingMsg.text)
+            this.arrContacts[index].arrMsgs.push({ ...this.newSendingMsg });
+            this.newSendingMsg.text = ``;
+        },
+    },
 });
