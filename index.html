@@ -100,8 +100,8 @@
                 <div class="right-messages">
 
                     <!-- message-sent -->
-                    <div class='message sent'>
-                        <span class="message-text">Ciao come stai?</span>
+                    <div class="message sent" v-for="(messageSent, index) in arrContacts[activeIndex].arrMsgsSent">
+                        <span class="message-text">{{arrContacts[activeIndex].arrMsgsSent[index].text}}</span>
                         <span class="message-time">20/03/2020 16:30:00</span>
 
                         <i class="fa fa-chevron-down f-right message-options"></i>
@@ -112,7 +112,7 @@
                     </div>
 
                     <!-- message-received -->
-                    <div class='message received'>
+                    <div class="message received" v-for="(messageReceived, index) in arrContacts[activeIndex].arrMsgsReceived">
                         <span class="message-text">Bene grazie! Stasera ci vediamo?</span>
                         <span class="message-time">20/03/2020 16:30:55</span>
 

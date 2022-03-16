@@ -52,7 +52,7 @@ const app = new Vue({
                 previewMsg: ``,
                 arrMsgsSent: [
                     {
-                        text: `Hai portato a spasso il cane?`,
+                        text: `Ciao come stai?`,
                         time: ``, 
                     },
                 ],
