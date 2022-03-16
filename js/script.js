@@ -26,23 +26,21 @@ const app = new Vue({
                 name: `Michele`,
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
-                previewMsg: ``, // TODO: crea random date
-                arrMsgsSent: [
+                previewMsg: ``, // TODO: create random date
+                arrMsgs: [
                     {
-                        id: 0,
+                        id: `sent`,
                         text: `Hai portato a spasso il cane?`,
                         time: ``, 
                     },
                     {
-                        id: 1,
+                        id: `sent`,
                         text: `Ricordati di dargli da mangiare`,
                         time: ``, 
                     },
-                ],
-                arrMsgsReceived: [
                     {
-                        id: 2,
-                        text: `Ok`,
+                        id: `received`,
+                        text: `ok`,
                         time: ``, 
                     },
                 ],
@@ -53,21 +51,19 @@ const app = new Vue({
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
                 previewMsg: ``,
-                arrMsgsSent: [
+                arrMsgs: [
                     {
-                        id: 1,
+                        id: `sent`,
                         text: `Ciao come stai?`,
                         time: ``, 
                     },
-                ],
-                arrMsgsReceived: [
                     {
-                        id: 0,
+                        id: `receveid`,
                         text: `Bene grazie! Stasera ci vediamo?`,
                         time: ``, 
                     },
                     {
-                        id: 2,
+                        id: `sent`,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
                         time: ``, 
                     },
@@ -79,22 +75,20 @@ const app = new Vue({
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
                 previewMsg: ``,
-                arrMsgsSent: [
+                arrMsgs: [
                     {
-                        id: 0,
+                        id: `sent`,
                         text: `Hai portato a spasso il cane?`,
                         time: ``, 
                     },
                     {
-                        id: 1,
+                        id: `sent`,
                         text: `Ricordati di dargli da mangiare`,
                         time: ``, 
                     },
-                ],
-                arrMsgsReceived: [
                     {
-                        id: 2,
-                        text: `Ok`,
+                        id: `received`,
+                        text: `ok`,
                         time: ``, 
                     },
                 ],
@@ -105,21 +99,19 @@ const app = new Vue({
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
                 previewMsg: ``,
-                arrMsgsSent: [
+                arrMsgs: [
                     {
-                        id: 1,
+                        id: `sent`,
                         text: `Ciao come stai?`,
                         time: ``, 
                     },
-                ],
-                arrMsgsReceived: [
                     {
-                        id: 0,
+                        id: `receveid`,
                         text: `Bene grazie! Stasera ci vediamo?`,
                         time: ``, 
                     },
                     {
-                        id: 2,
+                        id: `sent`,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
                         time: ``, 
                     },
@@ -131,22 +123,20 @@ const app = new Vue({
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
                 previewMsg: ``,
-                arrMsgsSent: [
+                arrMsgs: [
                     {
-                        id: 0,
-                        text: `Hai portato a spasso il cane?`,
+                        id: `sent`,
+                        text: `Ciao come stai?`,
                         time: ``, 
                     },
                     {
-                        id: 1,
-                        text: `Ricordati di dargli da mangiare`,
+                        id: `receveid`,
+                        text: `Bene grazie! Stasera ci vediamo?`,
                         time: ``, 
                     },
-                ],
-                arrMsgsReceived: [
                     {
-                        id: 2,
-                        text: `Ok`,
+                        id: `sent`,
+                        text: `Mi piacerebbe ma devo andare a fare la spesa`,
                         time: ``, 
                     },
                 ],
@@ -157,22 +147,20 @@ const app = new Vue({
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
                 previewMsg: ``,
-                arrMsgsSent: [
+                arrMsgs: [
                     {
-                        id: 1,
-                        text: `Ciao come stai?`,
-                        time: ``, 
-                    },
-                ],
-                arrMsgsReceived: [
-                    {
-                        id: 0,
-                        text: `Bene grazie! Stasera ci vediamo?`,
+                        id: `sent`,
+                        text: `Hai portato a spasso il cane?`,
                         time: ``, 
                     },
                     {
-                        id: 2,
-                        text: `Mi piacerebbe ma devo andare a fare la spesa`,
+                        id: `sent`,
+                        text: `Ricordati di dargli da mangiare`,
+                        time: ``, 
+                    },
+                    {
+                        id: `received`,
+                        text: `ok`,
                         time: ``, 
                     },
                 ],
@@ -183,22 +171,20 @@ const app = new Vue({
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
                 previewMsg: ``,
-                arrMsgsSent: [
+                arrMsgs: [
                     {
-                        id: 0,
+                        id: `sent`,
                         text: `Hai portato a spasso il cane?`,
                         time: ``, 
                     },
                     {
-                        id: 1,
+                        id: `sent`,
                         text: `Ricordati di dargli da mangiare`,
                         time: ``, 
                     },
-                ],
-                arrMsgsReceived: [
                     {
-                        id: 2,
-                        text: `Ok`,
+                        id: `received`,
+                        text: `ok`,
                         time: ``, 
                     },
                 ],
@@ -209,21 +195,19 @@ const app = new Vue({
                 lastMsg: `Ultimo messaggio inviato`,
                 lastMsgTime: `10/01/2020 16:15:22`,
                 previewMsg: ``,
-                arrMsgsSent: [
+                arrMsgs: [
                     {
-                        id: 1,
+                        id: `sent`,
                         text: `Ciao come stai?`,
                         time: ``, 
                     },
-                ],
-                arrMsgsReceived: [
                     {
-                        id: 0,
+                        id: `receveid`,
                         text: `Bene grazie! Stasera ci vediamo?`,
                         time: ``, 
                     },
                     {
-                        id: 2,
+                        id: `sent`,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
                         time: ``, 
                     },
