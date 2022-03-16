@@ -214,7 +214,6 @@ const app = new Vue({
     },
     methods: {
         sendNewMsg() {
-            console.log(`funzia`)
             const newSendingMsg = {...this.newSendingMsg};
 
             this.sendMsg({...this.newSendingMsg});
@@ -223,7 +222,7 @@ const app = new Vue({
             setTimeout(this.replyMsg, 1000)
         },
         sendMsg(message){
-            this.arrContacts[currentChatIndex].arrMsgs.push(message);
+            this.arrContacts[this.currentChatIndex].arrMsgs.push(message);
         },
         replyMsg() {
             this.sendMsg({
