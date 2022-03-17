@@ -49,19 +49,19 @@ const app = new Vue({
     el: `#app`,
     data: {
         currentChatIndex: 0,
-        newSendingMsg: {
-            sent: true,
-            text: ``,
-            time: ``,
+        mainUser: {
+            img: `img/avatar_io.jpg`,
+            name: `Giuliana`,
         },
         arrChats: [
             {
-                userObj: {
+                user: {
                     img: `img/avatar_1.jpg`,
                     name: `Michele`,
                     lastMsgTime: `10/01/2020 16:15:22`,
                 },
                 // previewMsg: ``, // TODO: create random date
+                newMsgContent: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -81,12 +81,13 @@ const app = new Vue({
                 ],
             },
             {
-                userObj: {
+                user: {
                     img: `img/avatar_2.jpg`,
                     name: `Fabio`,
                     lastMsgTime: `10/01/2020 16:15:22`,
                 },
                 previewMsg: ``,
+                newMsgContent: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -106,12 +107,13 @@ const app = new Vue({
                 ],
             },
             {
-                userObj: {
+                user: {
                     img: `img/avatar_3.jpg`,
                     name: `Samuele`,
                     lastMsgTime: `10/01/2020 16:15:22`,
                 },
                 previewMsg: ``,
+                newMsgContent: ``,
                 arrMsgs: [
                     {
                         sent: false,
@@ -131,12 +133,13 @@ const app = new Vue({
                 ],
             },
             {
-                userObj: {
+                user: {
                     img: `img/avatar_4.jpg`,
                     name: `Alessandro B.`,
                     lastMsgTime: `10/01/2020 16:15:22`,
                 },
                 previewMsg: ``,
+                newMsgContent: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -151,12 +154,13 @@ const app = new Vue({
                 ],
             },
             {
-                userObj: {
+                user: {
                     img: `img/avatar_5.jpg`,
                     name: `Alessandro L.`,
                     lastMsgTime: `10/01/2020 16:15:22`,
                 },
                 previewMsg: ``,
+                newMsgContent: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -176,12 +180,13 @@ const app = new Vue({
                 ],
             },
             {
-                userObj: {
+                user: {
                     img: `img/avatar_6.jpg`,
                     name: `Claudia`,
                     lastMsgTime: `10/01/2020 16:15:22`,
                 },
                 previewMsg: ``,
+                newMsgContent: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -201,12 +206,13 @@ const app = new Vue({
                 ],
             },
             {
-                userObj: {
+                user: {
                     img: `img/avatar_7.jpg`,
                     name: `Federico`,
                     lastMsgTime: `10/01/2020 16:15:22`,
                 },
                 previewMsg: ``,
+                newMsgContent: ``,
                 arrMsgs: [
                     {
                         sent: false,
@@ -226,12 +232,13 @@ const app = new Vue({
                 ],
             },
             {
-                userObj: {
+                user: {
                     img: `img/avatar_8.jpg`,
                     name: `Davide`,
                     lastMsgTime: `10/01/2020 16:15:22`,
                 },
                 previewMsg: ``,
+                newMsgContent: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -250,27 +257,29 @@ const app = new Vue({
     },
     methods: {
         sendNewMsg() {
-            this.sendMsg({...this.newSendingMsg});
-            this.newSendingMsg.text = ``;
-
-            setTimeout(this.replyMsg, 2000);
+            const activeChat = this.arrChats[this.currentChatIndex];
+            const newMsg = {
+                sent: true,
+                text: activeChat.newMsgContent,
+                time: luxon.DateTime.now().toISO().split(`.`)[0],
+            };
+            activeChat.arrMsgs.push(newMsg);
+            activeChat.newMsgContent = ``;
+            this.replyMsg(this.currentChatIndex);
         },
-        sendMsg(message){
-            this.arrChats[this.currentChatIndex].arrMsgs.push(message);
+        replyMsg(chatIndex) {
+            setTimeout(() => {
+                const newMsg = {
+                    sent: false,
+                    text: `ok`,
+                    time: luxon.DateTime.now().toISO().split(`.`)[0],
+                };
+                this.arrChats[chatIndex].arrMsgs.push(newMsg);
+            }, 2000);
         },
-        replyMsg() {
-            this.sendMsg({
-                sent: false,
-                text: `ok`,
-                time: ``,
-            })
-        },
-        searchingChat() {
-            console.log(this.arrChats[this.currentChatIndex].userObj.name.includes(`Michele`));
-        },
-        bootSearchChat() {
-            console.log(`funziaaaa`);
-        },
+        // searchingChat() {
+        //     console.log(this.arrChats[this.currentChatIndex].user.name.includes(`Michele`));
+        // },
     },
 });
 
