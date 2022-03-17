@@ -350,8 +350,8 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.right .right-messages .message-options:hover .message-options-panel,
-.right .right-messages .message-options:active .message-options-panel:hover {
+.right .right-messages .message-options:active .message-options-panel,
+.right .right-messages .message-options .message-options-panel:hover {
     display: block;
 }
   
@@ -360,7 +360,7 @@ body {
     width: 100%;
     height: 50%;
     line-height: 40px;
-    font-size: 10px;
+    font-size: 14px;
     text-align: center;
 }
   

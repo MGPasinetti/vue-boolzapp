@@ -102,14 +102,14 @@
                 <div class="right-messages">
 
                     <!-- messages -->
-                    <div class="message" v-for="message in arrChats[currentChatIndex].arrMsgs" :class="{sent : message.sent, received : !message.sent }">
+                    <div class="message" v-for="(message, msgIndex) in arrChats[currentChatIndex].arrMsgs" :class="{sent : message.sent, received : !message.sent }">
                         <span class="message-text">{{message.text}}</span>
-                        <span class="message-time">20/03/2020 16:30:00</span>
+                        <span class="message-time">{{message.time}}</span>
 
                         <i class="fa fa-chevron-down f-right message-options">
                             <div class="message-options-panel">
                                 <div class="message-info">Info messaggio</div>
-                                <div class="message-destroy">Cancella messaggio</div>
+                                <div class="message-destroy" @click="removeMsg(msgIndex)">Cancella messaggio</div>
                             </div>
                         </i>
                     </div>

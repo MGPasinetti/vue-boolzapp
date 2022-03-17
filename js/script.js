@@ -64,21 +64,22 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                currentMsgIndex: 0,
                 arrMsgs: [
                     {
                         sent: true,
                         text: `Hai portato a spasso il cane?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: true,
                         text: `Ricordati di dargli da mangiare`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: false,
                         text: `ok`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                 ],
             },
@@ -94,17 +95,17 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Ciao come stai?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: false,
                         text: `Bene grazie! Stasera ci vediamo?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: true,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                 ],
             },
@@ -120,17 +121,17 @@ const app = new Vue({
                     {
                         sent: false,
                         text: `la Marianna va in campagna`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: true,
                         text: `Sicuro di non aver sbagliato chat?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: false,
                         text: `Ah scusa`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                 ],
             },
@@ -146,12 +147,12 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Lo sai che ha aperto una nuova pizzeria?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: false,
                         text: `Sì ma preferirei andare al cinema`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                 ],
             },
@@ -167,17 +168,17 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Ciao come stai?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: false,
                         text: `Bene grazie! Stasera ci vediamo?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: true,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                 ],
             },
@@ -193,17 +194,17 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Hai portato a spasso il cane?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: true,
                         text: `Ricordati di dargli da mangiare`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: false,
                         text: `ok`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                 ],
             },
@@ -219,17 +220,17 @@ const app = new Vue({
                     {
                         sent: false,
                         text: `la Marianna va in campagna`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: true,
                         text: `Sicuro di non aver sbagliato chat?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                     {
                         sent: false,
                         text: `Ah scusa`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                 ],
             },
@@ -245,12 +246,12 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Lo sai che ha aperto una nuova pizzeria?`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`,
                     },
                     {
                         sent: false,
                         text: `Sì ma preferirei andare al cinema`,
-                        time: ``, 
+                        time: `20/03/2020 16:30:00`, 
                     },
                 ],
             },
@@ -287,6 +288,9 @@ const app = new Vue({
                     chat.user.visible = false;
                 }
             });
+        },
+        removeMsg(index) {
+            this.arrChats[this.currentChatIndex].arrMsgs.splice(index, 1);
         },
     },
 });
