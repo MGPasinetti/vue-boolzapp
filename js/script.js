@@ -60,9 +60,9 @@ const app = new Vue({
                 user: {
                     img: `img/avatar_1.jpg`,
                     name: `Michele`,
-                    lastMsgTime: `10/01/2020 16:15:22`,
+                    visible: true,
                 },
-                // previewMsg: ``, // TODO: create random date
+                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
                 arrMsgs: [
                     {
@@ -86,9 +86,9 @@ const app = new Vue({
                 user: {
                     img: `img/avatar_2.jpg`,
                     name: `Fabio`,
-                    lastMsgTime: `10/01/2020 16:15:22`,
+                    visible: true,               
                 },
-                previewMsg: ``,
+                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
                 arrMsgs: [
                     {
@@ -112,9 +112,9 @@ const app = new Vue({
                 user: {
                     img: `img/avatar_3.jpg`,
                     name: `Samuele`,
-                    lastMsgTime: `10/01/2020 16:15:22`,
+                    visible: true,
                 },
-                previewMsg: ``,
+                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
                 arrMsgs: [
                     {
@@ -138,9 +138,9 @@ const app = new Vue({
                 user: {
                     img: `img/avatar_4.jpg`,
                     name: `Alessandro B.`,
-                    lastMsgTime: `10/01/2020 16:15:22`,
+                    visible: true,
                 },
-                previewMsg: ``,
+                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
                 arrMsgs: [
                     {
@@ -159,9 +159,9 @@ const app = new Vue({
                 user: {
                     img: `img/avatar_5.jpg`,
                     name: `Alessandro L.`,
-                    lastMsgTime: `10/01/2020 16:15:22`,
+                    visible: true,
                 },
-                previewMsg: ``,
+                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
                 arrMsgs: [
                     {
@@ -185,9 +185,9 @@ const app = new Vue({
                 user: {
                     img: `img/avatar_6.jpg`,
                     name: `Claudia`,
-                    lastMsgTime: `10/01/2020 16:15:22`,
+                    visible: true,
                 },
-                previewMsg: ``,
+                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
                 arrMsgs: [
                     {
@@ -211,9 +211,9 @@ const app = new Vue({
                 user: {
                     img: `img/avatar_7.jpg`,
                     name: `Federico`,
-                    lastMsgTime: `10/01/2020 16:15:22`,
+                    visible: true,
                 },
-                previewMsg: ``,
+                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
                 arrMsgs: [
                     {
@@ -237,9 +237,9 @@ const app = new Vue({
                 user: {
                     img: `img/avatar_8.jpg`,
                     name: `Davide`,
-                    lastMsgTime: `10/01/2020 16:15:22`,
+                    visible: true,                
                 },
-                previewMsg: ``,
+                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
                 arrMsgs: [
                     {
@@ -279,7 +279,15 @@ const app = new Vue({
                 this.arrChats[chatIndex].arrMsgs.push(newMsg);
             }, 2000);
         },
+        contactsFilter() {
+            this.arrChats.forEach(chat => {
+                if (chat.user.name.toLowerCase().includes(this.searchingName.toLowerCase())) {
+                    chat.user.visible = true;
+                } else {
+                    chat.user.visible = false;
+                }
+            });
+
+        },
     },
 });
-
-

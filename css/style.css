@@ -32,6 +32,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+/* UTILITY CLASSES */
 .f-right {
     float: right;
 }

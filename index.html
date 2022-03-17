@@ -54,14 +54,14 @@
                     <button class="search-btn" for="search">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
-                    <input id="contacts-filter" v-model="searchingName" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat" name="search">
+                    <input id="contacts-filter" @keyup="contactsFilter" v-model="searchingName" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat" name="search">
                 </div>
             </div>
 
             <!-- contacts-left -->
             <div class="contacts">
 
-                <div class="contact" v-for="(chat, index) in arrChats" @click="currentChatIndex = index" :class="index == currentChatIndex ? `active` : ``">
+                <div class="contact" v-for="(chat, index) in arrChats" @click="currentChatIndex = index" :class="{active: index == currentChatIndex, hidden: !chat.user.visible}" v-show="chat.user.visible">
                     <div class="contact-img">
                         <img :src="chat.user.img" :alt="chat.user.name">
                     </div>
