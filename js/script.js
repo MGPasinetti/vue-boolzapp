@@ -10,7 +10,7 @@ Click sul contatto mostra la conversazione del contatto cliccato
 
 MILESTONE 3
 Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-FIXME: Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
 MILESTONE 4
 TODO: Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
@@ -48,7 +48,9 @@ Pensate bene a come strutturare i dati prima di implementare il codice.
 const app = new Vue({
     el: `#app`,
     data: {
+
         currentChatIndex: 0,
+        searchingName: ``,
         mainUser: {
             img: `img/avatar_io.jpg`,
             name: `Giuliana`,
@@ -277,9 +279,6 @@ const app = new Vue({
                 this.arrChats[chatIndex].arrMsgs.push(newMsg);
             }, 2000);
         },
-        // searchingChat() {
-        //     console.log(this.arrChats[this.currentChatIndex].user.name.includes(`Michele`));
-        // },
     },
 });
 

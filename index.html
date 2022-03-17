@@ -54,15 +54,14 @@
                     <button class="search-btn" for="search">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
-                    <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat" name="search">
+                    <input id="contacts-filter" v-model="searchingName" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat" name="search">
                 </div>
             </div>
 
             <!-- contacts-left -->
             <div class="contacts">
 
-                <div class="contact" v-for="(chat, index) in arrChats" @click="currentChatIndex = index"
-                    :class="index == currentChatIndex ? `active` : ``">
+                <div class="contact" v-for="(chat, index) in arrChats" @click="currentChatIndex = index" :class="index == currentChatIndex ? `active` : ``">
                     <div class="contact-img">
                         <img :src="chat.user.img" :alt="chat.user.name">
                     </div>
@@ -103,8 +102,7 @@
                 <div class="right-messages">
 
                     <!-- messages -->
-                    <div class="message" v-for="message in arrChats[currentChatIndex].arrMsgs"
-                        :class="{sent : message.sent, received : !message.sent }">
+                    <div class="message" v-for="message in arrChats[currentChatIndex].arrMsgs" :class="{sent : message.sent, received : !message.sent }">
                         <span class="message-text">{{message.text}}</span>
                         <span class="message-time">20/03/2020 16:30:00</span>
 
@@ -123,8 +121,7 @@
                 <div class="right-footer-icon f-left">
                     <i class="far fa-smile"></i>
                 </div>
-                <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model="arrChats[currentChatIndex].newMsgContent"
-                    @keyup.enter="sendNewMsg()">
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model="arrChats[currentChatIndex].newMsgContent" @keyup.enter="sendNewMsg">
                 <div class="right-footer-icon f-right">
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </div>
