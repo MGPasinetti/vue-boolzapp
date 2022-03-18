@@ -68,7 +68,7 @@
                     <div class="contact-info">
                         <h3>
                             <span class="contact-name">{{chat.user.name}}</span>
-                            <span class="time f-right">{{lastMsg.time}}</span>
+                            <span class="time f-right">{{formattedDate(lastMsg.time, `italian`)}}</span>
                         </h3>
                         <small>tutto fatto! ...</small>
                     </div>
@@ -104,7 +104,7 @@
                     <!-- messages -->
                     <div class="message" v-for="(message, msgIndex) in arrChats[currentChatIndex].arrMsgs" :class="{sent : message.sent, received : !message.sent }">
                         <span class="message-text">{{message.text}}</span>
-                        <span class="message-time">{{ formattedDate(message.time, `italian`) }}</span>
+                        <span class="message-time">{{formattedDate(message.time, `italian`)}}</span>
 
                         <i class="fa fa-chevron-down f-right message-options" @click="showPanel(msgIndex)"></i>
                         <div class="message-options-panel" :class="{active : message.msgPanel}">
