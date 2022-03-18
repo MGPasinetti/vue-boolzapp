@@ -286,6 +286,7 @@ const app = new Vue({
                 sent: true,
                 text: activeChat.newMsgContent.trim(),
                 time: luxon.DateTime.now().toISO().split(`.`)[0],
+                msgPanel: false,
             };
             if (newMsg.text != ``) {
                 activeChat.arrMsgs.push(newMsg);
@@ -293,12 +294,14 @@ const app = new Vue({
             }
             activeChat.newMsgContent = ``;
         },
+
         replyMsg(chatIndex) {
             setTimeout(() => {
                 const newMsg = {
                     sent: false,
                     text: `ok`,
                     time: luxon.DateTime.now().toISO().split(`.`)[0],
+                    msgPanel: false,
                 };
                 this.arrChats[chatIndex].arrMsgs.push(newMsg);
             }, 2000);

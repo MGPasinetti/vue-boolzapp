@@ -122,7 +122,8 @@
                 </div>
                 <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model="arrChats[currentChatIndex].newMsgContent" @keyup.enter="sendNewMsg">
                 <div class="right-footer-icon f-right">
-                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true" v-if="arrChats[currentChatIndex].newMsgContent"></i>
+                    <i class="fa fa-microphone" aria-hidden="true" v-else></i>
                 </div>
             </div>
         </div>
