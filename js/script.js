@@ -316,6 +316,18 @@ const app = new Vue({
         removeMsg(index) {
             this.arrChats[this.currentChatIndex].arrMsgs.splice(index, 1);
         },
+        formattedDate(date, format) {
+            let formatStr = `dd/MM/yyyy HH:mm:ss`;
+            switch (format) {
+                case `italian`:
+                    formatStr = `dd/MM/yyyy HH:mm:ss`;
+                    break;
+                case `american`:
+                    formatStr = `MM/dd/yyyy HH:mm:ss`;
+                    break;
+            };
+            return luxon.DateTime.fromISO(date).toFormat(formatStr);
+        },
     },
 });
 
