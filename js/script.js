@@ -62,9 +62,7 @@ const app = new Vue({
                     name: `Michele`,
                     visible: true,
                 },
-                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
-                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -92,9 +90,7 @@ const app = new Vue({
                     name: `Fabio`,
                     visible: true,               
                 },
-                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
-                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -122,9 +118,7 @@ const app = new Vue({
                     name: `Samuele`,
                     visible: true,
                 },
-                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
-                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: false,
@@ -152,9 +146,7 @@ const app = new Vue({
                     name: `Alessandro B.`,
                     visible: true,
                 },
-                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
-                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -176,9 +168,7 @@ const app = new Vue({
                     name: `Alessandro L.`,
                     visible: true,
                 },
-                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
-                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -206,9 +196,7 @@ const app = new Vue({
                     name: `Claudia`,
                     visible: true,
                 },
-                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
-                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -236,9 +224,7 @@ const app = new Vue({
                     name: `Federico`,
                     visible: true,
                 },
-                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
-                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: false,
@@ -266,9 +252,7 @@ const app = new Vue({
                     name: `Davide`,
                     visible: true,                
                 },
-                lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
-                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -284,14 +268,11 @@ const app = new Vue({
                     },
                 ],
             },
-            
         ],
     },
     computed: {
         lastMsg() {
-            // const lastMsgOfChat = this.arrChats[index].arrMsgs[this.arrMsgs.length - 1];
-            this.arrChats[this.currentChatIndex].lastMsgOfChat.push(this.arrMsgs[this.arrMsgs.length - 1].time);
-            return this.arrChats[this.currentChatIndex].lastMsgOfChat;
+            return this.arrChats[this.currentChatIndex].arrMsgs.slice(-1)[0];
         },
     },
     methods: {
