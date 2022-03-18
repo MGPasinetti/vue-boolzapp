@@ -22,7 +22,7 @@ SUPER BONUSES
 -- FUNZIONALITÀ --
 - evitare che l'utente possa inviare un messaggio vuoto o composto solamente da spazi
 - TODO: A) cambiare icona in basso a destra (a fianco all'input per scrivere un nuovo messaggio) finché l'utente sta scrivendo: di default si visualizza l'icona del microfono, quando l'input non è vuoto si visualizza l'icona dell'aeroplano. Quando il messaggio è stato inviato e l'input si svuota, si torna a visualizzare il microfono.
-- TODO: B) inviare quindi il messaggio anche cliccando sull'icona dell'aeroplano
+- B) inviare quindi il messaggio anche cliccando sull'icona dell'aeroplano
 - TODO: predisporre una lista di frasi e/o citazioni da utilizzare al posto della risposta "ok:" quando il pc risponde, anziché scrivere "ok", scegliere una frase random dalla lista e utilizzarla come testo del messaggio di risposta del pc
 - TODO: visualizzare nella lista dei contatti l'ultimo messaggio inviato/ricevuto da ciascun contatto
 - TODO: inserire l'orario corretto nei messaggi (v. note day.js)
@@ -64,6 +64,7 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -93,6 +94,7 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -122,6 +124,7 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: false,
@@ -151,6 +154,7 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -174,6 +178,7 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -203,6 +208,7 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -232,6 +238,7 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: false,
@@ -261,6 +268,7 @@ const app = new Vue({
                 },
                 lastMsgTime: `10/01/2020 16:15:22`,
                 newMsgContent: ``,
+                lastMsgOfChat: ``,
                 arrMsgs: [
                     {
                         sent: true,
@@ -278,6 +286,13 @@ const app = new Vue({
             },
             
         ],
+    },
+    computed: {
+        lastMsg() {
+            // const lastMsgOfChat = this.arrChats[index].arrMsgs[this.arrMsgs.length - 1];
+            this.arrChats[this.currentChatIndex].lastMsgOfChat.push(this.arrMsgs[this.arrMsgs.length - 1].time);
+            return this.arrChats[this.currentChatIndex].lastMsgOfChat;
+        },
     },
     methods: {
         sendNewMsg() {
