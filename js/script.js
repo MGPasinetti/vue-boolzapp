@@ -20,7 +20,7 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
 SUPER BONUSES
 -- FUNZIONALITÀ --
-- TODO: evitare che l'utente possa inviare un messaggio vuoto o composto solamente da spazi
+- evitare che l'utente possa inviare un messaggio vuoto o composto solamente da spazi
 - TODO: A) cambiare icona in basso a destra (a fianco all'input per scrivere un nuovo messaggio) finché l'utente sta scrivendo: di default si visualizza l'icona del microfono, quando l'input non è vuoto si visualizza l'icona dell'aeroplano. Quando il messaggio è stato inviato e l'input si svuota, si torna a visualizzare il microfono.
 - TODO: B) inviare quindi il messaggio anche cliccando sull'icona dell'aeroplano
 - TODO: predisporre una lista di frasi e/o citazioni da utilizzare al posto della risposta "ok:" quando il pc risponde, anziché scrivere "ok", scegliere una frase random dalla lista e utilizzarla come testo del messaggio di risposta del pc
@@ -287,13 +287,11 @@ const app = new Vue({
                 text: activeChat.newMsgContent.trim(),
                 time: luxon.DateTime.now().toISO().split(`.`)[0],
             };
-            if (this.newMsg.text != ``) {
-                this.arrChats[chatIndex].arrMsgs.push(newMsg);
-            } else {
-                activeChat.newMsgContent = ``;
+            if (newMsg.text != ``) {
+                activeChat.arrMsgs.push(newMsg);
+                this.replyMsg(this.currentChatIndex);
             }
             activeChat.newMsgContent = ``;
-            this.replyMsg(this.currentChatIndex);
         },
         replyMsg(chatIndex) {
             setTimeout(() => {
@@ -302,6 +300,7 @@ const app = new Vue({
                     text: `ok`,
                     time: luxon.DateTime.now().toISO().split(`.`)[0],
                 };
+                this.arrChats[chatIndex].arrMsgs.push(newMsg);
             }, 2000);
         },
         contactsFilter() {
