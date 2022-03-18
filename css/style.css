@@ -33,6 +33,10 @@ body {
 }
 
 /* UTILITY CLASSES */
+i {
+    cursor: pointer;
+}
+
 .f-right {
     float: right;
 }

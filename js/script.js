@@ -294,7 +294,6 @@ const app = new Vue({
             }
             activeChat.newMsgContent = ``;
         },
-
         replyMsg(chatIndex) {
             setTimeout(() => {
                 const newMsg = {
