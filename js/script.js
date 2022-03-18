@@ -288,8 +288,15 @@ const app = new Vue({
                 }
             });
         },
+        showPanel() {
+            console.log(`funzia`);
+        },
         removeMsg(index) {
             this.arrChats[this.currentChatIndex].arrMsgs.splice(index, 1);
         },
     },
 });
+
+function myFunction() {
+    document.getElementById("message-options-panel").style.display = "block";
+}
