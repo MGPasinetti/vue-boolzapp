@@ -68,17 +68,20 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Hai portato a spasso il cane?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: true,
                         text: `Ricordati di dargli da mangiare`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: false,
                         text: `ok`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                 ],
             },
@@ -94,17 +97,20 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Ciao come stai?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: false,
                         text: `Bene grazie! Stasera ci vediamo?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: true,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                 ],
             },
@@ -120,17 +126,20 @@ const app = new Vue({
                     {
                         sent: false,
                         text: `la Marianna va in campagna`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: true,
                         text: `Sicuro di non aver sbagliato chat?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: false,
                         text: `Ah scusa`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                 ],
             },
@@ -146,12 +155,14 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Lo sai che ha aperto una nuova pizzeria?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: false,
                         text: `Sì ma preferirei andare al cinema`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                 ],
             },
@@ -167,17 +178,20 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Ciao come stai?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: false,
                         text: `Bene grazie! Stasera ci vediamo?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: true,
                         text: `Mi piacerebbe ma devo andare a fare la spesa`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                 ],
             },
@@ -193,17 +207,20 @@ const app = new Vue({
                     {
                         sent: true,
                         text: `Hai portato a spasso il cane?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: true,
                         text: `Ricordati di dargli da mangiare`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: false,
                         text: `ok`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                 ],
             },
@@ -219,17 +236,20 @@ const app = new Vue({
                     {
                         sent: false,
                         text: `la Marianna va in campagna`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: true,
                         text: `Sicuro di non aver sbagliato chat?`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                     {
                         sent: false,
                         text: `Ah scusa`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                 ],
             },
@@ -246,11 +266,13 @@ const app = new Vue({
                         sent: true,
                         text: `Lo sai che ha aperto una nuova pizzeria?`,
                         time: `20/03/2020 16:30:00`,
+                        msgPanel: false,
                     },
                     {
                         sent: false,
                         text: `Sì ma preferirei andare al cinema`,
-                        time: `20/03/2020 16:30:00`, 
+                        time: `20/03/2020 16:30:00`,
+                        msgPanel: false, 
                     },
                 ],
             },
@@ -288,8 +310,8 @@ const app = new Vue({
                 }
             });
         },
-        showPanel() {
-            console.log(`funzia`);
+        showPanel(msgIndex) {
+            this.arrChats[this.currentChatIndex].arrMsgs[msgIndex].msgPanel = !this.arrChats[this.currentChatIndex].arrMsgs[msgIndex].msgPanel;
         },
         removeMsg(index) {
             this.arrChats[this.currentChatIndex].arrMsgs.splice(index, 1);
@@ -297,6 +319,3 @@ const app = new Vue({
     },
 });
 
-function myFunction() {
-    document.getElementById("message-options-panel").style.display = "block";
-}
